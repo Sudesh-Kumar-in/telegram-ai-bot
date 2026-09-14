@@ -11,9 +11,9 @@ from telegram.ext import (
 
 from config import TELEGRAM_BOT_TOKEN
 from handlers import (
-    start,
+    start_command,
     help_command,
-    clear,
+    clear_command,
     handle_message,
     error_handler,
 )
@@ -22,9 +22,9 @@ from handlers import (
 async def create_application():
     application = Application.builder().token(TELEGRAM_BOT_TOKEN).build()
 
-    application.add_handler(CommandHandler("start", start))
+    application.add_handler(CommandHandler("start", start_command))
     application.add_handler(CommandHandler("help", help_command))
-    application.add_handler(CommandHandler("clear", clear))
+    application.add_handler(CommandHandler("clear", clear_command))
     application.add_handler(
         MessageHandler(filters.TEXT & ~filters.COMMAND, handle_message)
     )
@@ -141,5 +141,6 @@ def response(data, status_code=200):
         },
         "body": json.dumps(data),
     }
+
 
 app = handler
