@@ -141,3 +141,5 @@ def response(data, status_code=200):
         },
         "body": json.dumps(data),
     }
+
+app = handler
