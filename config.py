@@ -28,7 +28,7 @@ DATABASE_PATH = os.getenv("DATABASE_PATH", "bot_database.db")
 MAX_HISTORY_MESSAGES = int(os.getenv("MAX_HISTORY_MESSAGES") or "10")
 
 # OpenAI request timeout (seconds)
-OPENAI_TIMEOUT = int(os.getenv("OPENAI_TIMEOUT", "60"))
+OPENAI_TIMEOUT = int(os.getenv("OPENAI_TIMEOUT") or "60")
 
 # Telegram ka single message character limit (safety margin ke saath)
 TELEGRAM_MESSAGE_LIMIT = 4000
