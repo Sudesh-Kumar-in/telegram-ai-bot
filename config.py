@@ -25,7 +25,7 @@ OPENAI_MODEL = os.getenv("OPENAI_MODEL", "gpt-4o-mini")
 DATABASE_PATH = os.getenv("DATABASE_PATH", "bot_database.db")
 
 # Kitne purane messages context ke liye OpenAI ko bheje jayenge (per user)
-MAX_HISTORY_MESSAGES = int(os.getenv("MAX_HISTORY_MESSAGES", "10"))
+MAX_HISTORY_MESSAGES = int(os.getenv("MAX_HISTORY_MESSAGES") or "10")
 
 # OpenAI request timeout (seconds)
 OPENAI_TIMEOUT = int(os.getenv("OPENAI_TIMEOUT", "60"))
